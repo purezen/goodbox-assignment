@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PhotoListContainer from '../containers/PhotoListContainer'
 
 class App extends Component {
   constructor(props) {
@@ -6,16 +7,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.getCurrencyList()
+    this.props.loadDetails()
   }
 
   render() {
-    const currencyList = this.props.currencyList.map((c,i) => <div key={i}>{c.name}</div>)
+    const list = this.props.albums.map((album,i) => <div key={i}><PhotoListContainer album={album} /></div>)
 
     return (
       <div>
-        <strong>Currency List</strong>
-        {currencyList}
+        <h4>Photo Gallery</h4>
+        {list}
       </div>
     )
   }

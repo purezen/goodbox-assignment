@@ -4,14 +4,14 @@ import * as a from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    currencyList: state.currencyList
+    albums: state.albums
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrencyList: () => {
-      dispatch(a.fetchCurrencyList())
+    loadDetails: () => {
+      dispatch(a.fetchDetails())
     }
   }
 }
